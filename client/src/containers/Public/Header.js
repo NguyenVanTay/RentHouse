@@ -4,22 +4,26 @@ import React, { useCallback } from "react";
 import logo from "../../assets/Logo.png";
 import { Button } from "../../components";
 import { Icon } from "@iconify/react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { path } from "../../utils/constant";
+
 const Header = () => {
   const navigate = useNavigate();
 
-  const goLogin = useCallback(() => {
-    navigate(path.LOGIN);
+  const handleNavigate = useCallback((flag) => {
+    navigate(path.LOGIN, { state: { flag } });
   }, []);
   return (
     <>
       <div className="w-[80%] mx-auto flex items-center justify-between  ">
-        <img
-          src={logo}
-          className="object-contain h-[100px] w-[200px]"
-          alt="logo"
-        />
+        <Link to={"/"}>
+          <img
+            src={logo}
+            className="object-contain h-[100px] w-[200px]"
+            alt="logo"
+          />
+        </Link>
+
         <div className="flex items-center gap-x-2 ">
           <Button
             text={"Yêu Thích"}
@@ -39,7 +43,7 @@ const Header = () => {
               width={24}
               height={24}
             ></Icon>
-            onclick={goLogin}
+            onclick={() => handleNavigate(false)}
           />
           <Button
             text={"Đăng ký "}
@@ -51,6 +55,7 @@ const Header = () => {
               width={24}
               height={24}
             ></Icon>
+            onclick={() => handleNavigate(true)}
           />
           <Button
             text={"Đăng ký mới"}

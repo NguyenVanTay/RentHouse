@@ -18,6 +18,7 @@ export const registerService = ({ name, phone, password }) =>
           id: v4(),
         },
       });
+
       const token =
         response[1] &&
         jwt.sign(

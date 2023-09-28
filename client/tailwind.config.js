@@ -18,6 +18,10 @@ module.exports = {
       maxWidth: {
         600: "600px",
       },
+      backgroundImage: {
+        "bg-auth":
+          "url('https://img.freepik.com/premium-photo/abstract-white-background-with-smooth-lines_476363-276.jpg?w=826')",
+      },
     },
   },
   plugins: [],
