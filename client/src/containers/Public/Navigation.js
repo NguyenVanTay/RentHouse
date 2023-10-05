@@ -1,59 +1,52 @@
 /** @format */
 
-import React from "react";
-import { Button } from "../../components";
-import { NavLink } from "react-router-dom";
-const nav = [
-  { name: "Trang chủ", path: "home" },
-  { name: "Cho thuê phòng trọ", path: "cho-thue-phong-tro" },
-  { name: "Cho thuê nhà nguyên căn", path: "nha-cho-thue" },
-  { name: "Cho thuê căn hộ", path: "cho-thue-can-ho" },
-  { name: "Cho thuê mặt bằng", path: "cho-thue-mat-bang" },
-];
+import React, { useEffect, useState } from "react";
 
+import { NavLink } from "react-router-dom";
+import { apiGetCategories } from "../../services/category";
+import { formatVietnameseToString } from "../../utils/constant";
 const notActive = "hover:bg-secondary2 px-4 h-full flex items-center ";
 const active =
   "hover:bg-secondary2 px-4 h-full flex items-center  bg-secondary2";
 const Navigation = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await apiGetCategories();
+      console.log(response);
+      if (response?.data.err === 0) {
+        setCategories(response.data.response);
+      }
+    };
+    fetchCategories();
+  }, []);
+
   return (
     <div className="w-screen h-[50px] bg-secondary1 text-white">
       <div className="w-[80%] mx-auto flex  items-center text-lg font-bold h-full">
-        {nav?.length > 0 &&
-          nav.map((item, index) => {
+        <NavLink
+          to={`/`}
+          className={({ isActive }) => (isActive ? active : notActive)}
+        >
+          Trang Chủ
+        </NavLink>
+        {categories?.length > 0 &&
+          categories.map((item) => {
             return (
               <div
                 className="h-full flex justify-center items-center"
-                key={index}
+                key={item.code}
               >
                 <NavLink
-                  to={item.path}
+                  to={`${formatVietnameseToString(item.value)}`}
                   className={({ isActive }) => (isActive ? active : notActive)}
                 >
-                  {item.name}
+                  {item.value}
                 </NavLink>
               </div>
             );
           })}
-        {/* <Button
-          text="Trang chủ"
-          textColor={"text-white font-bold"}
-          hoverStyle={"hover:bg-secondary2 hover:font-bold"}
-        />
-        <Button
-          text="Cho thuê phòng trọ"
-          textColor={"text-white  font-bold"}
-          hoverStyle={"hover:bg-secondary2 hover:font-bold"}
-        />
-        <Button
-          text="Nhà cho thuê"
-          textColor={"text-white font-bold"}
-          hoverStyle={"hover:bg-secondary2 hover:font-bold"}
-        />
-        <Button
-          text="Cho thuê căn hộ"
-          textColor={"text-white font-bold"}
-          hoverStyle={"hover:bg-secondary2 hover:font-bold"}
-        /> */}
       </div>
     </div>
   );
