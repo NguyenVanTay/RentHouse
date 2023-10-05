@@ -26,6 +26,7 @@ export const registerService = ({ name, phone, password }) =>
           process.env.SECRET_KEY,
           { expiresIn: "2d" }
         );
+
       resolve({
         err: token ? 0 : 2,
         msg: token
