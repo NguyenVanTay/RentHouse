@@ -8,8 +8,8 @@ const Home = () => {
   return (
     <div className="w-full m-auto h-full">
       <Header />
-      <div className="w-full">
-        <Navigation />
+      <Navigation />
+      <div className="w-4/5 mx-auto">
         <Outlet />
       </div>
     </div>

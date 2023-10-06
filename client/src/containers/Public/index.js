@@ -8,3 +8,4 @@ export { default as RentalHouse } from "./RentalHouse";
 export { default as RentalRoom } from "./RentalRoom";
 export { default as RentalSpace } from "./RentalSpace";
 export { default as RetalApartment } from "./RetalApartment";
+export { default as HomePage } from "./HomePage";

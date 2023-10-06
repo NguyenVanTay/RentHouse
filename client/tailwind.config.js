@@ -14,6 +14,7 @@ module.exports = {
         primary: "#f5f5f5",
         secondary2: "#7dde5f",
         secondary1: "#4a8ee0",
+        secondary3: "#febb30",
       },
       maxWidth: {
         600: "600px",

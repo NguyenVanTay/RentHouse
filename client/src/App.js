@@ -8,13 +8,16 @@ import {
   RentalSpace,
   RetalApartment,
   RentalHouse,
+  HomePage,
 } from "./containers/Public";
 import { path } from "./utils/constant";
 function App() {
   return (
-    <div className="h-screen w-screen bg-primary">
+    <div className="h-screen w-screen bg-primary ">
       <Routes>
         <Route path={path.HOME} element={<Home />}>
+          <Route path={"*"} element={<HomePage />} />
+
           <Route path={path.LOGIN} element={<Login />} />
           <Route path={path.CHO_THUE_CAN_HO} element={<RetalApartment />} />
           <Route path={path.CHO_THUE_MAT_BANG} element={<RentalSpace />} />

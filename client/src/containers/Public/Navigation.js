@@ -23,7 +23,7 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div className="w-screen h-[50px] bg-secondary1 text-white">
+    <div className="w-screen h-[50px] bg-secondary1 text-white my-2">
       <div className="w-[80%] mx-auto flex  items-center text-lg font-bold h-full">
         <NavLink
           to={`/`}
