@@ -15,6 +15,8 @@ module.exports = {
         secondary2: "#7dde5f",
         secondary1: "#4a8ee0",
         secondary3: "#febb30",
+        "over-lay-30": "rgba(0,0,0,0.3)",
+        "over-lay-70": "rgba(0,0,0,0.7)",
       },
       maxWidth: {
         600: "600px",

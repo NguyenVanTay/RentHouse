@@ -1,11 +1,12 @@
 /** @format */
 
 import React from "react";
-import Search from "./Search";
+import { Province } from "../../components";
+import List from "./List";
+
 const Homepage = () => {
   return (
     <div className=" w-full flex flex-col gap-3">
-      <Search />
       <div className="">
         <p className="text-xl font-bold">
           Kênh thông tin Phòng Trọ số 1 Việt Nam
@@ -15,6 +16,15 @@ const Homepage = () => {
           phòng trọ, nhà nguyên căn, căn hộ, ở ghép nhanh, hiệu quả với 100.000+
           tin đăng và 2.500.000 lượt xem mỗi tháng.
         </p>
+      </div>
+      <Province />
+      <div className="w-full flex gap-4">
+        <div className="w-[70%] ">
+          <List />
+        </div>
+        <div className="w-[30%]  bg-slate-400 border-2 border-yellow-400">
+          Siderbar
+        </div>
       </div>
     </div>
   );

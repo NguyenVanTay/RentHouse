@@ -5,7 +5,7 @@ import { Button, SearchItem } from "../../components";
 import { Icon } from "@iconify/react";
 const Search = () => {
   return (
-    <div className="h-[60px] p-[10px] bg-secondary3 rounded-md flex items-center justify-around gap-4 ">
+    <div className=" w-[80%] mx-auto h-[60px] p-[10px] bg-secondary3 rounded-md flex items-center justify-around gap-4 ">
       <SearchItem
         text={"Phòng trọ, nhà trọ"}
         IconBefore={<Icon icon={"mdi:building"}></Icon>}

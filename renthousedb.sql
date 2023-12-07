@@ -144,9 +144,9 @@ CREATE TABLE `categorys` (
 --
 
 INSERT INTO `categories` (`id`, `code`, `value`, `header`, `subheader`, `createdAt`, `updatedAt`) VALUES
-(1, 'CTCH', 'Cho Thuê Căn Hộ ', 'Cho Thuê Căn Hộ Chung Cư, Giá Rẻ, View Đẹp, Mới Nhất 2023', 'Cho thuê căn hộ - Kênh đăng tin cho thuê căn hộ số 1: giá rẻ, chính chủ, đầy đủ tiện nghi. Cho thuê chung cư với nhiều mức giá, diện tích cho thuê khác nhau.', '2023-10-04 14:19:58', '2023-10-04 14:19:58'),
-(2, 'CTMB', 'Cho Thuê Mặt Bằng ', 'Cho Thuê Mặt Bằng, Văn Phòng Kinh Doanh, Giá Rẻ, Mới Nhất 2023', 'Có 2.879 tin đăng cho thuê mặt bằng, văn phòng kinh doanh. Giá rẻ, gần chợ, trường học, tiện mở quán ăn, cafe. Đăng tin mặt bằng, văn phòng hiệu quả tại Phongtro123.com', '2023-10-04 14:19:58', '2023-10-04 14:19:58'),
-(3, 'CTN', 'Cho Thuê Nhà', 'Cho Thuê Nhà Nguyên Căn, Giá Rẻ, Chính Chủ, Mới Nhất 2023', 'Cho thuê nhà nguyên căn - Kênh đăng tin cho thuê nhà số 1: giá rẻ, chính chủ, miễn trung gian, đầy đủ tiện nghi, mức giá, diện tích cho thuê khác nhau.', '2023-10-04 14:19:58', '2023-10-04 14:19:58'),
+(1, 'CTCH', 'Cho Thuê Căn Hộ', 'Cho Thuê Căn Hộ Chung Cư, Giá Rẻ, View Đẹp, Mới Nhất 2023', 'Cho thuê căn hộ - Kênh đăng tin cho thuê căn hộ số 1: giá rẻ, chính chủ, đầy đủ tiện nghi. Cho thuê chung cư với nhiều mức giá, diện tích cho thuê khác nhau.', '2023-10-04 14:19:58', '2023-10-04 14:19:58'),
+(2, 'CTMB', 'Cho Thuê Mặt Bằng', 'Cho Thuê Mặt Bằng, Văn Phòng Kinh Doanh, Giá Rẻ, Mới Nhất 2023', 'Có 2.879 tin đăng cho thuê mặt bằng, văn phòng kinh doanh. Giá rẻ, gần chợ, trường học, tiện mở quán ăn, cafe. Đăng tin mặt bằng, văn phòng hiệu quả tại Phongtro123.com', '2023-10-04 14:19:58', '2023-10-04 14:19:58'),
+(3, 'NCT', 'Cho Thuê Nhà', 'Cho Thuê Nhà Nguyên Căn, Giá Rẻ, Chính Chủ, Mới Nhất 2023', 'Cho thuê nhà nguyên căn - Kênh đăng tin cho thuê nhà số 1: giá rẻ, chính chủ, miễn trung gian, đầy đủ tiện nghi, mức giá, diện tích cho thuê khác nhau.', '2023-10-04 14:19:58', '2023-10-04 14:19:58'),
 (4, 'CTPT', 'Cho Thuê Phòng Trọ', 'Cho Thuê Phòng Trọ, Giá Rẻ, Tiện Nghi, Mới Nhất 2023', 'Cho thuê phòng trọ - Kênh thông tin số 1 về phòng trọ giá rẻ, phòng trọ sinh viên, phòng trọ cao cấp mới nhất năm 2023. Tất cả nhà trọ cho thuê giá tốt nhất tại Việt Nam', '2023-10-04 14:19:58', '2023-10-04 14:19:58');
 
 -- --------------------------------------------------------
