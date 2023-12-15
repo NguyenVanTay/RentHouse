@@ -104,10 +104,14 @@ const Item = ({
             ></Icon>
           </div>
         </div>
-        <div className="flex items-center justify-between">
-          <p className="font-bold text-green-400">{attributes?.price}</p>
-          <p className="">{attributes?.acreage}</p>
-          <p className="">{attributes?.address}</p>
+        <div className="flex items-center justify-between gap-2">
+          <p className="font-bold text-green-400 flex-3 whitespace-nowrap overflow-hidden text-ellipsis ">
+            {attributes?.price}
+          </p>
+          <p className="flex-1">{attributes?.acreage}</p>
+          <p className="flex-3 whitespace-nowrap overflow-hidden text-ellipsis">{`${
+            address.split(",")[address.split(",").length - 2]
+          }, ${address.split(",")[address.split(",").length - 1]}`}</p>
         </div>
         <div className="">
           <p className="text-gray-500 w-full h-[100px] line-clamp-4 ">

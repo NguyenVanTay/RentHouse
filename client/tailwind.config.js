@@ -25,6 +25,9 @@ module.exports = {
         "bg-auth":
           "url('https://img.freepik.com/premium-photo/abstract-white-background-with-smooth-lines_476363-276.jpg?w=826')",
       },
+      flex: {
+        3: "3 3 0%",
+      },
     },
   },
   plugins: [],
