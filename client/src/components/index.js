@@ -7,3 +7,4 @@ export { default as ProvinceButton } from "./ProvinceButton";
 export { default as Province } from "./Province";
 export { default as Item } from "./Item";
 export { default as PageNumber } from "./PageNumber";
+export { default as ItemSidebar } from "./ItemSidebar";

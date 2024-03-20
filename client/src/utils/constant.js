@@ -8,6 +8,7 @@ export const path = {
   CHO_THUE_NHA: "cho-thue-nha",
   CHO_THUE_MAT_BANG: "cho-thue-mat-bang",
   CHO_THUE_PHONG_TRO: "cho-thue-phong-tro",
+  CHI_TIET_BAI_DANG__TITLE_POSTID: "chi-tiet/:title/:postId",
   CHECKOUT: "checkout",
 };
 export const location = [

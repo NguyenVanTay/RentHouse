@@ -9,6 +9,7 @@ import {
   RetalApartment,
   RentalHouse,
   HomePage,
+  DetailPost,
 } from "./containers/Public";
 import { path } from "./utils/constant";
 import Checkout from "./containers/Public/Checkout";
@@ -27,6 +28,7 @@ function App() {
           <Route path={path.CHO_THUE_PHONG_TRO} element={<RentalRoom />} />
 
           <Route path={path.CHECKOUT} element={<Checkout />} />
+          <Route path={"chi-tiet/*"} element={<DetailPost />} />
         </Route>
       </Routes>
     </div>

@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { PageNumber } from "../../components";
 import { Icon } from "@iconify/react";
-const Pagination = ({ number }) => {
+const Pagination = ({ page }) => {
   const { count, posts } = useSelector((state) => state.post);
 
   const [arrPage, setArrPage] = useState([]);
-  const [currentPage, setCurentPage] = useState(+number);
+  const [currentPage, setCurentPage] = useState(+page || 1);
   const [isHiddenEnd, setIsHiddenEnd] = useState(false);
   const [isHiddenStart, setIsHiddenStart] = useState(false);
 
@@ -25,7 +25,7 @@ const Pagination = ({ number }) => {
 
     currentPage <= 2 ? setIsHiddenStart(true) : setIsHiddenStart(false);
   }, [count, posts, currentPage]);
-  console.log(arrPage);
+
   return (
     <div className="flex justify-center gap-2 py-5">
       {!isHiddenStart && (

@@ -2,7 +2,8 @@
 
 import React, { memo, useState } from "react";
 import { Icon } from "@iconify/react";
-
+import { useNavigate, Link } from "react-router-dom";
+import { formatVietnameseToString } from "../utils/Common/formatStringVietnamese";
 const Item = ({
   images,
   address,
@@ -11,12 +12,33 @@ const Item = ({
   star,
   title,
   user,
+  id,
 }) => {
   const indexs = [0, 1, 2, 3];
   const [isHoverHeart, setHoverHeart] = useState(false);
+  const navigate = useNavigate();
+  const handleStar = (star) => {
+    let stars = [];
+    for (let i = 1; i <= +star; i++) {
+      stars.push(
+        <Icon
+          icon={"material-symbols:star"}
+          width={24}
+          height={24}
+          className="text-yellow-300 inline-block mb-[6px] "
+        ></Icon>
+      );
+    }
+    return stars;
+  };
+  console.log(handleStar(star));
+
   return (
     <div className="w-full flex border-t-2 border-orange-600 p-4">
-      <div className="w-2/5 flex flex-wrap gap-[2px] items-center relative cursor-pointer">
+      <Link
+        to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
+        className="w-2/5 flex flex-wrap gap-[2px] items-center relative cursor-pointer"
+      >
         {images.length > 0 &&
           images
             .filter((i, index) => indexs.some((i) => i === index))
@@ -53,46 +75,14 @@ const Item = ({
             ></Icon>
           )}
         </div>
-      </div>
+      </Link>
       <div className="w-3/5">
         <div className="flex justify-between gap-4 items-start">
           <div className="text-red-500 ml-1 ">
-            <Icon
-              icon={"material-symbols:star"}
-              width={24}
-              height={24}
-              className="text-yellow-300 inline-block"
-            ></Icon>
-            <Icon
-              icon={"material-symbols:star "}
-              width={24}
-              height={24}
-              className="text-yellow-300 inline-block"
-            ></Icon>
-            <Icon
-              icon={"material-symbols:star"}
-              width={24}
-              height={24}
-              className="text-yellow-300 inline-block mb-[6px] "
-            ></Icon>
-            <Icon
-              icon={"material-symbols:star"}
-              width={24}
-              height={24}
-              className="text-yellow-300 inline-block  mb-[6px] "
-            ></Icon>
-            <Icon
-              icon={"material-symbols:star"}
-              width={24}
-              height={24}
-              className="text-yellow-300 inline-block  mb-[6px] "
-            ></Icon>
-            <Icon
-              icon={"material-symbols:star"}
-              width={24}
-              height={24}
-              className="text-yellow-300 inline-block  mb-[6px] "
-            ></Icon>
+            {handleStar(star).length > 0 &&
+              handleStar(star).map((star, number) => {
+                return star;
+              })}
             {title}
           </div>
           <div className="w-[10%] flex justify-end">
