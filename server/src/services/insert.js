@@ -10,7 +10,7 @@ import chothuecanho from "../../data/chothuecanho.json";
 import nhachothue from "../../data/nhachothue.json";
 import chothuephongtro from "../../data/chothuephongtro.json";
 require("dotenv").config();
-const dataBody = chothuephongtro.body;
+const dataBody = chothuecanho.body;
 const hashPassword = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(12));
 
@@ -97,6 +97,29 @@ export const insertService = () =>
         });
       });
       resolve();
+    } catch (error) {
+      reject(error);
+    }
+  });
+
+export const createPricesAndAreas = () =>
+  new Promise((resolve, reject) => {
+    try {
+      dataPrice.forEach(async (item) => {
+        await db.Price.create({
+          id: v4(),
+          code: item.code,
+          value: item.value,
+        });
+      });
+      dataArea.forEach(async (item) => {
+        await db.Area.create({
+          id: v4(),
+          code: item.code,
+          value: item.value,
+        });
+      });
+      resolve("OK");
     } catch (error) {
       reject(error);
     }

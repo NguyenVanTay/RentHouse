@@ -1,24 +1,32 @@
 /** @format */
 
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import logo from "../../assets/Logo.png";
 import { Button } from "../../components";
 import { Icon } from "@iconify/react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useSearchParams } from "react-router-dom";
 import { path } from "../../utils/constant";
 import { useSelector, useDispatch } from "react-redux";
 
 import * as actions from "../../store/actions";
 const Header = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const headerRef = useRef();
   const { isLoggedIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const handleNavigate = useCallback((flag) => {
     navigate(path.LOGIN, { state: { flag } });
   }, []);
+  useEffect(() => {
+    headerRef.current.scrollIntoView({ behavior: "smooth" });
+  }, [searchParams.get("page")]);
   return (
     <>
-      <div className="w-[80%] mx-auto flex items-center justify-between  ">
+      <div
+        ref={headerRef}
+        className="w-[80%] mx-auto flex items-center justify-between  "
+      >
         <Link to={"/"}>
           <img
             src={logo}

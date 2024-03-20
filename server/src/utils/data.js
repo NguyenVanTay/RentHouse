@@ -14,7 +14,6 @@ const prices = [
 export const dataPrice = prices.map((item) => ({
   ...item,
   code: generateCode(item.value),
-  value: item,
 }));
 
 const areas = [
@@ -28,6 +27,4 @@ const areas = [
 export const dataArea = areas.map((item) => ({
   ...item,
   code: generateCode(item.value),
-  value: item,
 }));
-

@@ -1,15 +1,17 @@
 /** @format */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Button, Item } from "../../components";
 import { getPosts, getPostsLimit } from "../../store/actions/post";
 import { useDispatch, useSelector } from "react-redux";
-const List = () => {
+const List = ({ page }) => {
   const dispatch = useDispatch();
-  const { posts, count } = useSelector((state) => state.post);
+  const { posts } = useSelector((state) => state.post);
+  const listRef = useRef();
   useEffect(() => {
-    dispatch(getPostsLimit(0));
-  }, []);
+    let offset = page ? +page - 1 : 0;
+    dispatch(getPostsLimit(offset));
+  }, [page]);
 
   return (
     <div className=" border-2 p-2 bg-white shadow-md rounded-md">
@@ -44,6 +46,7 @@ const List = () => {
                 star={+item?.star}
                 title={item?.title}
                 user={item?.user}
+                id={item?.id}
               />
             );
           })}
