@@ -30,17 +30,24 @@ export const getCategories = () => async (dispatch) => {
 export const getPrices = () => async (dispatch) => {
   try {
     const response = await apis.apiGetPrices();
+    console.log(response, "envljnvljweavbjvje v");
+    // if (response?.data.err === 0) {
+    //   dispatch({
+    //     type: actionTypes.GET_PRICES,
+    //     prices: response.data.response,
+    //   });
+    // } else {
+    //   dispatch({
+    //     type: actionTypes.GET_PRICES,
+    //     msg: response.data.msg,
+    //     prices: null,
+    //   });
+    // }
 
-    if (response?.data.err === 0) {
+    if (response?.Data) {
       dispatch({
         type: actionTypes.GET_PRICES,
-        prices: response.data.response,
-      });
-    } else {
-      dispatch({
-        type: actionTypes.GET_PRICES,
-        msg: response.data.msg,
-        prices: null,
+        prices: response.Data,
       });
     }
   } catch (error) {

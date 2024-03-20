@@ -3,8 +3,14 @@
 import React from "react";
 import { Carousel } from "antd";
 import GoogleMapReact from "google-map-react";
+import { useParams } from "react-router-dom"
+import { getPosts, getPostsLimit, getPostDetail } from "../../store/actions/post";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const DetailPost = () => {
+  const dispatch = useDispatch()
+  const { posts } = useSelector((state) => state.post);
   const AnyReactComponent = ({ text }) => <div>{text}</div>;
   const defaultProps = {
     center: {
@@ -16,6 +22,12 @@ const DetailPost = () => {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
+
+  const postId = useParams()
+  useEffect(() => {
+    dispatch(getPostDetail(postId.title));
+  }, []);
+console.log(posts);
   return (
     <div className="h-[300px] py-4">
       <Carousel afterChange={onChange} className="w-[80%] mx-auto">

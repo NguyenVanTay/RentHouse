@@ -1,26 +1,49 @@
 /** @format */
 
 import actionTypes from "./actionTypes";
-import { apiGetPosts, apiGetPostsLimit } from "../../services/post";
+import { apiGetPosts, apiGetPostsLimit, getPostDetails } from "../../services/post";
 
 export const getPosts = () => async (dispatch) => {
   try {
     const response = await apiGetPosts();
 
-    if (response?.data.err === 0) {
+    // if (response?.data.err === 0) {
+    //   dispatch({
+    //     type: actionTypes.GET_POSTS,
+    //     posts: response.data.response,
+    //   });
+    // } else {
+    //   dispatch({
+    //     type: actionTypes.GET_POSTS,
+    //     data: response.data.msg,
+    //   });
+    // }
+    if (response.status == 200) {
       dispatch({
         type: actionTypes.GET_POSTS,
-        posts: response.data.response,
-      });
-    } else {
-      dispatch({
-        type: actionTypes.GET_POSTS,
-        data: response.data.msg,
+        posts: response.data.Data,
       });
     }
   } catch (error) {
     dispatch({
       type: actionTypes.GET_POSTS,
+      posts: null,
+    });
+  }
+};
+
+export const getPostDetail = (code) => async (dispatch) => {
+  try {
+    const response = await getPostDetails(code);
+    if (response.status == 200) {
+      dispatch({
+        type: actionTypes.GET_POSTSDETAIL,
+        posts: response.data.Data,
+      });
+    }
+  } catch (error) {
+    dispatch({
+      type: actionTypes.GET_POSTSDETAIL,
       posts: null,
     });
   }

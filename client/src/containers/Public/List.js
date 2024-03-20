@@ -8,11 +8,15 @@ const List = ({ page }) => {
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.post);
   const listRef = useRef();
-  useEffect(() => {
-    let offset = page ? +page - 1 : 0;
-    dispatch(getPostsLimit(offset));
-  }, [page]);
+  // useEffect(() => {
+  //   let offset = page ? +page - 1 : 0;
+  //   dispatch(getPostsLimit(offset));
+  // }, [page]);
 
+  useEffect(() => {
+    dispatch(getPosts());
+  }, []);
+  console.log(posts);
   return (
     <div className=" border-2 p-2 bg-white shadow-md rounded-md">
       <div className="flex items-center justify-between my-3 px-4">
@@ -38,16 +42,24 @@ const List = ({ page }) => {
           posts.map((item) => {
             return (
               <Item
-                key={item?.id}
-                address={item?.address}
-                attributes={item?.attributes}
-                description={JSON.parse(item?.description)}
-                images={JSON.parse(item?.images?.image)}
-                star={+item?.star}
-                title={item?.title}
-                user={item?.user}
-                id={item?.id}
+                id={item?.BasicInformation.Code}
+                address={item?.BasicInformation.Address}
+                title={item?.BasicInformation.Description}
+                priceJP={item?.BasicInformation.PriceJP}
+                priceEN={item?.BasicInformation.PriceUSA}
+                locationDescription={item?.BasicInformation.LocationDescription}
+                longitude={item?.BasicInformation.Latitude}
+                latitude={item?.BasicInformation.Logitude}
+                acreage={item?.LandInformation.LI_Area}
+                // attributes={item?.attributes}
+                // description={JSON.parse(item?.description)}
+                images={item?.PictureURL}
+              // star={+item?.star}
+              // title={item?.title}
+              // user={item?.user}
+              // id={item?.id}
               />
+              // <></>
             );
           })}
       </div>

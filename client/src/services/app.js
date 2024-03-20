@@ -6,7 +6,7 @@ export const apiGetPrices = () =>
     try {
       const response = await axiosConfig({
         method: "GET",
-        url: "/api/v1/price/all",
+        url: "/V1/Metadata",
       });
       resolve(response);
     } catch (error) {

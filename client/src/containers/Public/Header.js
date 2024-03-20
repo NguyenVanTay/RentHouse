@@ -35,7 +35,7 @@ const Header = () => {
           />
         </Link>
 
-        <div className="flex items-center gap-x-2  ">
+        {/* <div className="flex items-center gap-x-2  ">
           {!isLoggedIn && (
             <div className="flex items-center gap-x-2">
               <Button
@@ -82,7 +82,7 @@ const Header = () => {
               />
             </div>
           )}          
-        </div>
+        </div> */}
       </div>
     </>
   );

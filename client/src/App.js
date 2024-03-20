@@ -28,7 +28,7 @@ function App() {
           <Route path={path.CHO_THUE_PHONG_TRO} element={<RentalRoom />} />
 
           <Route path={path.CHECKOUT} element={<Checkout />} />
-          <Route path={"chi-tiet/*"} element={<DetailPost />} />
+          <Route path={path.CHI_TIET_BAI_DANG__TITLE_POSTID} element={<DetailPost />} />
         </Route>
       </Routes>
     </div>

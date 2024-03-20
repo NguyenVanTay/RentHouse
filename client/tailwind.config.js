@@ -12,9 +12,9 @@ module.exports = {
       },
       backgroundColor: {
         primary: "#f5f5f5",
-        secondary2: "#7dde5f",
-        secondary1: "#4a8ee0",
-        secondary3: "#febb30",
+        secondary2: "#E8751A",
+        secondary1: "#31363F",
+        secondary3: "#E8751A",
         "over-lay-30": "rgba(0,0,0,0.3)",
         "over-lay-70": "rgba(0,0,0,0.7)",
       },

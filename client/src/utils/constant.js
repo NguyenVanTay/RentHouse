@@ -4,11 +4,12 @@ export const path = {
   HOME: "/*",
   HOME_PAGE: ":page",
   LOGIN: "login",
-  CHO_THUE_CAN_HO: "cho-thue-can-ho",
-  CHO_THUE_NHA: "cho-thue-nha",
-  CHO_THUE_MAT_BANG: "cho-thue-mat-bang",
-  CHO_THUE_PHONG_TRO: "cho-thue-phong-tro",
-  CHI_TIET_BAI_DANG__TITLE_POSTID: "chi-tiet/:title/:postId",
+  CHO_THUE_CAN_HO: "house-rental",
+  CHO_THUE_NHA: "townhouse-rental",
+  CHO_THUE_MAT_BANG: "apartment-rental",
+  CHO_THUE_PHONG_TRO: "unit-rental",
+  // CHI_TIET_BAI_DANG__TITLE_POSTID: "detail/:title/:postId",
+  CHI_TIET_BAI_DANG__TITLE_POSTID: "detail/:title",
   CHECKOUT: "checkout",
 };
 export const location = [

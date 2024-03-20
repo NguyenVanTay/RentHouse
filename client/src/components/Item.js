@@ -13,6 +13,12 @@ const Item = ({
   title,
   user,
   id,
+  priceJP,
+  priceEN,
+  locationDescription,
+  latitude,
+  longitude,
+  acreage,
 }) => {
   const indexs = [0, 1, 2, 3];
   const [isHoverHeart, setHoverHeart] = useState(false);
@@ -34,12 +40,13 @@ const Item = ({
   console.log(handleStar(star));
 
   return (
-    <div className="w-full flex border-t-2 border-orange-600 p-4">
+    <div className="w-full flex border-t-2 border-orange-600 p-4 py-10">
       <Link
-        to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
+        // to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
+        to={`detail/${id}`}
         className="w-2/5 flex flex-wrap gap-[2px] items-center relative cursor-pointer"
       >
-        {images.length > 0 &&
+        {/* {images.length > 0 &&
           images
             .filter((i, index) => indexs.some((i) => i === index))
             ?.map((i) => {
@@ -50,11 +57,13 @@ const Item = ({
                   alt="preview"
                 ></img>
               );
-            })}
-        <p className="text-white bg-over-lay-70  px-2 rounded-md absolute bottom-4 left-2">
-          {`${images.length} ảnh`}
-        </p>
-        <div
+            })}         */}
+        <img
+          className="w-full h-full object-cover"
+          src={images}
+          alt="preview"
+        ></img>
+        {/* <div
           className=""
           onMouseEnter={() => setHoverHeart(true)}
           onMouseLeave={() => setHoverHeart(false)}
@@ -74,41 +83,39 @@ const Item = ({
               className="absolute right-14 bottom-4 text-white "
             ></Icon>
           )}
-        </div>
+        </div> */}
       </Link>
-      <div className="w-3/5">
+      <div className="w-3/5 p-10">
         <div className="flex justify-between gap-4 items-start">
-          <div className="text-red-500 ml-1 ">
-            {handleStar(star).length > 0 &&
+          <div className="text-red-500 font-bold text-2xl">
+            {/* {handleStar(star).length > 0 &&
               handleStar(star).map((star, number) => {
                 return star;
-              })}
+              })} */}
             {title}
           </div>
           <div className="w-[10%] flex justify-end">
             <Icon
-              icon={"bi:bookmark-star-fill"}
+              icon={"iconamoon:location-pin-fill"}
               width={24}
               height={24}
-              className="text-yellow-600"
+              className="text-red-400"
             ></Icon>
           </div>
         </div>
         <div className="flex items-center justify-between gap-2">
-          <p className="font-bold text-green-400 flex-3 whitespace-nowrap overflow-hidden text-ellipsis ">
-            {attributes?.price}
+          <p className="font-bold flex-3 whitespace-nowrap overflow-hidden text-ellipsis ">
+            {priceJP} Yen - {priceEN} USD
           </p>
-          <p className="flex-1">{attributes?.acreage}</p>
-          <p className="flex-3 whitespace-nowrap overflow-hidden text-ellipsis">{`${
-            address.split(",")[address.split(",").length - 2]
-          }, ${address.split(",")[address.split(",").length - 1]}`}</p>
+          <p className="flex-1">{acreage} m2</p>
         </div>
-        <div className="">
+        <div className="flex flex-col gap-[5px]">
+          <p className="">Address: {address}</p>
           <p className="text-gray-500 w-full h-[100px] line-clamp-4 ">
-            {description}
+            Location detail: {locationDescription}
           </p>
         </div>
-        <div className="flex items-center my-5 justify-between">
+        {/* <div className="flex items-center my-5 justify-between">
           <div className="flex items-center  gap-2">
             <img
               className="w-[30px] h-[30px] object-cover rounded-full"
@@ -131,8 +138,12 @@ const Item = ({
               Nhắn Zalo
             </button>
           </div>
+        </div> */}
+        <div className="">Latitude: {latitude}</div>
+        <div className="">Longitude: {longitude}</div>
+        <div className="mt-[40px] flex items-center w-full justify-center">
+          <button className="p-4 rounded-lg bg-blue-500 text-white">More Information</button>
         </div>
-        <div className=""></div>
       </div>
     </div>
   );
