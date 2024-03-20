@@ -31,19 +31,7 @@ const Header = () => {
           {!isLoggedIn && (
             <div className="flex items-center gap-x-2">
               <Button
-                text={"Yêu Thích"}
-                textColor="text-white"
-                bgColor="bg-secondary2"
-                hoverStyle="hover:underline"
-                icon=<Icon
-                  icon={"mdi:heart-outline"}
-                  width={24}
-                  height={24}
-                ></Icon>
-              />
-
-              <Button
-                text={"Đăng nhập"}
+                text={"Sign In"}
                 textColor="text-white"
                 bgColor="bg-secondary1"
                 hoverStyle="hover:underline"
@@ -55,7 +43,7 @@ const Header = () => {
                 onclick={() => handleNavigate(false)}
               />
               <Button
-                text={"Đăng ký "}
+                text={"Sign Up"}
                 textColor="text-white"
                 bgColor="bg-secondary1"
                 hoverStyle="hover:underline"
@@ -70,10 +58,10 @@ const Header = () => {
           )}
           {isLoggedIn && (
             <div className=" flex items-center gap-x-2 ">
-              <p className="">Ten Cua ban</p>
+              <p className="">Profile</p>
 
               <Button
-                text={"Đăng xuất"}
+                text={"Sign Out"}
                 textColor="text-white"
                 bgColor="bg-secondary1"
                 hoverStyle="hover:underline"
@@ -85,15 +73,7 @@ const Header = () => {
                 onclick={() => dispatch(actions.logout())}
               />
             </div>
-          )}
-
-          <Button
-            text={"Đăng tin mới"}
-            textColor="text-white"
-            bgColor="bg-secondary2"
-            hoverStyle="hover:underline"
-            icon=<Icon icon={"ei:plus"} width={24} height={24}></Icon>
-          />
+          )}          
         </div>
       </div>
     </>

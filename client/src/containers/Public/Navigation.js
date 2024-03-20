@@ -29,7 +29,7 @@ const Navigation = () => {
           to={`/`}
           className={({ isActive }) => (isActive ? active : notActive)}
         >
-          Trang Chủ
+          Home
         </NavLink>
         {categories?.length > 0 &&
           categories.map((item) => {

@@ -14,19 +14,19 @@ const List = () => {
   return (
     <div className=" border-2 p-2 bg-white shadow-md rounded-md">
       <div className="flex items-center justify-between my-3 px-4">
-        <p className="text-lg font-bold">Danh sách tin đăng </p>
-        <p className="">Cập nhật : 12:05 25/08/2022</p>
+        <p className="text-lg font-bold">Real Estate & Property</p>
+        <p className="">Updated : 21:00 18/03/2024</p>
       </div>
       <div className="flex items-center gap-2 px-4">
-        <p className="">Sắp xếp</p>
+        <p className="">Sort</p>
         <Button
-          text={"Mặc định"}
+          text={"Default"}
           bgColor={"bg-gray-200"}
           hoverStyle="hover:underline"
         />
 
         <Button
-          text={"Mới nhất"}
+          text={"Latest"}
           bgColor={"bg-gray-200"}
           hoverStyle="hover:underline"
         />

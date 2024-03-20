@@ -7,22 +7,22 @@ const Search = () => {
   return (
     <div className=" w-[80%] mx-auto h-[60px] p-[10px] bg-secondary3 rounded-md flex items-center justify-around gap-4 ">
       <SearchItem
-        text={"Phòng trọ, nhà trọ"}
+        text={"House, Apartment & Unit"}
         IconBefore={<Icon icon={"mdi:building"}></Icon>}
         IconAfter={<Icon icon={"cil:delete"}></Icon>}
       />
       <SearchItem
-        text={"Toàn quốc"}
+        text={"Region"}
         IconBefore={<Icon icon={"ion:location-outline"}></Icon>}
         IconAfter={<Icon icon={"ri:arrow-right-s-line"}></Icon>}
       />
       <SearchItem
-        text={"Chọn giá"}
+        text={"Price"}
         IconBefore={<Icon icon={"tabler:report-money"}></Icon>}
         IconAfter={<Icon icon={"ri:arrow-right-s-line"}></Icon>}
       />
       <SearchItem
-        text={"Chọn diện tích"}
+        text={"Acreage"}
         IconBefore={<Icon icon={"radix-icons:ruler-square"}></Icon>}
         IconAfter={<Icon icon={"ri:arrow-right-s-line"}></Icon>}
       />
@@ -33,7 +33,7 @@ const Search = () => {
           height={24}
           color="white"
         ></Icon>
-        <p className="font-bold text-white">Tìm Kiếm</p>
+        <p className="font-bold text-white">Search</p>
       </button>
     </div>
   );

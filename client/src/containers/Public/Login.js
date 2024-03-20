@@ -57,7 +57,7 @@ const Login = () => {
           ...prev,
           {
             name: item[0],
-            message: " Bạn không được bỏ trống trường này",
+            message: " Required ",
           },
         ]);
         invalids++;
@@ -71,7 +71,7 @@ const Login = () => {
               ...prev,
               {
                 name: item[0],
-                message: " Mật khẩu phải có tối thiểu 6 ký ",
+                message: " Minium length 6 characters ",
               },
             ]);
             invalids++;
@@ -84,7 +84,7 @@ const Login = () => {
               ...prev,
               {
                 name: item[0],
-                message: " Số điện thoại không hợp lệ ",
+                message: " Invalid phone number ",
               },
             ]);
             invalids++;
@@ -101,14 +101,14 @@ const Login = () => {
     <div className=" bg-white w-[40%] mx-auto rounded-md shadow-md my-4 ">
       <div className="w-[80%] mx-auto flex flex-col gap-y-5 p-4">
         <p className="text-xl font-bold">
-          {isRegister ? "Đăng Ký Tài Khoản" : "Đăng Nhập"}
+          {isRegister ? "Sign Up" : "Sign In"}
         </p>
         <div className="flex flex-col gap-y-4 ">
           {isRegister && (
             <InputForm
               setInvalidFields={setInvalidFields}
               invalidFields={invalidFields}
-              label="HỌ TÊN"
+              label="Fullname"
               keyPayload="name"
               value={payload.name}
               setValue={setPayload}
@@ -117,7 +117,7 @@ const Login = () => {
           <InputForm
             setInvalidFields={setInvalidFields}
             invalidFields={invalidFields}
-            label="SỐ ĐIỆN THOẠI"
+            label="Phone Number"
             keyPayload="phone"
             setValue={setPayload}
             value={payload.phone}
@@ -126,7 +126,7 @@ const Login = () => {
           <InputForm
             setInvalidFields={setInvalidFields}
             invalidFields={invalidFields}
-            label="MẬT KHẨU"
+            label="Password"
             keyPayload="password"
             value={payload.password}
             setValue={setPayload}
@@ -135,7 +135,7 @@ const Login = () => {
         </div>
 
         <Button
-          text={isRegister ? "Đăng Ký" : "Đăng nhập"}
+          text={isRegister ? "Sign Up" : "Sign In"}
           textColor="text-white"
           bgColor="bg-secondary1"
           fullwidth
@@ -145,7 +145,7 @@ const Login = () => {
         <div className="flex justify-between">
           {isRegister ? (
             <div className="flex items-center">
-              <p className="">Bạn đã có tài khoản</p>
+              <p className="">Already have account ?</p>
               <Button
                 onclick={() => {
                   setIsRegister(false);
@@ -155,20 +155,20 @@ const Login = () => {
                     name: "",
                   });
                 }}
-                text="Đăng nhập ngay "
+                text="Sign In "
                 hoverStyle={"hover:text-orange-400"}
               ></Button>
             </div>
           ) : (
             <>
               <Button
-                text="Bạn quên tài khoản"
+                text="Forgot Password ?"
                 textColor="text-blue-400"
                 bgColor="bg-transparent"
                 hoverStyle={"hover:text-orange-400"}
               ></Button>
               <Button
-                text="Tạo tài khoản mởi"
+                text="Sign Up"
                 textColor="text-blue-400"
                 bgColor="bg-transparent"
                 hoverStyle={"hover:text-orange-400"}
