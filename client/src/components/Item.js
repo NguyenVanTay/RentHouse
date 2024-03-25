@@ -142,7 +142,12 @@ const Item = ({
         <div className="">Latitude: {latitude}</div>
         <div className="">Longitude: {longitude}</div>
         <div className="mt-[40px] flex items-center w-full justify-center">
-          <button className="p-4 rounded-lg bg-blue-500 text-white">More Information</button>
+          <Link
+            className="p-4 rounded-lg bg-blue-500 text-white"
+            to={`detail/${id}`}
+          >
+            More Information
+          </Link>
         </div>
       </div>
     </div>
